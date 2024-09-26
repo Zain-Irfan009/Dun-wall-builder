@@ -107,47 +107,6 @@ class DunBuilderController extends Controller
     }
 
 
-    public function FlowTrigger($dun_builder_detail){
-        $session=Session::first();
-        $query = 'mutation flowTriggerReceive($handle: String, $payload: JSON) {
-                  flowTriggerReceive(handle: $handle, payload: $payload) {
-                    userErrors {
-                      field
-                      message
-                    }
-                  }
-                }
-                ';
-
-        $variables = [
-            "handle" => 'dunbuilder-flow-trigger',
-            "payload" => [
-                "Wall width" => $dun_builder_detail->wall_width,
-                "Wall height" => $dun_builder_detail->wall_height,
-                "Dun width" => $dun_builder_detail->dun_width,
-                "Dun height" => $dun_builder_detail->dun_height,
-                "Show measurement" => $dun_builder_detail->show_measurement,
-                "Form type" => $dun_builder_detail->form_type,
-                "Shape" => $dun_builder_detail->shape,
-                "Vertical density" => $dun_builder_detail->vertical_density,
-                "Horizontal density" => $dun_builder_detail->horizontal_density,
-                "Image" => '',
-                "Email" => $dun_builder_detail->email,
-            ]
-        ];
-
-        $client = new Graphql($session->shop, $session->access_token);
-        $shopify_flow = $client->query(["query" => $query, "variables" => $variables]);
-        $shopify_flow = $shopify_flow->getDecodedBody();
-        $shopify_flow = json_decode(json_encode($shopify_flow), false);
-dd($shopify_flow);
-        if (count($shopify_flow->data->flowTriggerReceive->userErrors) == 0) {
-
-
-        }
-    }
-
-
     public function index(Request $request)
     {
         $shop = getShop($request->get('shopifySession'));
