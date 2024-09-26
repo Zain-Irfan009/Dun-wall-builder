@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "de3ee67b6bd81a83abe35eed3d574348"
+name = "Dun-wall-builder"
+handle = "dun-wall-builder"
+application_url = "https://armenia-they-holiday-magnet.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "tlx-new-brand.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products"
+
+[auth]
+redirect_urls = [
+  "https://armenia-they-holiday-magnet.trycloudflare.com/auth/callback",
+  "https://armenia-they-holiday-magnet.trycloudflare.com/auth/shopify/callback",
+  "https://armenia-they-holiday-magnet.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false

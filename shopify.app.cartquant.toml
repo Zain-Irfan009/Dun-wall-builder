@@ -1,0 +1,25 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "7e640161d3d6c83b407a87bb8a9bdd22"
+name = "CartQuant"
+handle = "cartquant"
+application_url = "https://phpstack-1317662-4812480.cloudwaysapps.com/"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = false
+dev_store_url = "nueva-nova.myshopify.com"
+include_config_on_deploy = true
+
+[auth]
+redirect_urls = [
+  "https://phpstack-1317662-4812480.cloudwaysapps.com/auth/callback",
+  "https://phpstack-1317662-4812480.cloudwaysapps.com/auth/shopify/callback",
+  "https://phpstack-1317662-4812480.cloudwaysapps.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false
