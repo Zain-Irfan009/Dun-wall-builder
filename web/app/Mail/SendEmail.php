@@ -28,7 +28,7 @@ class SendEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('contact_us')
+        return $this->view('mail-template')
             ->subject($this->details['subject'])
             ->with('details', $this->details);
 //        return $this->view('view.name');

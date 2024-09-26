@@ -36,7 +36,8 @@ import SkeletonTable from "../components/SkeletonTable.jsx";
 import {
     EditIcon,
     DeleteIcon,
-    ExternalSmallIcon
+    ExternalSmallIcon,
+    ViewIcon
 
 } from "@shopify/polaris-icons";
 import { useTranslation, Trans } from "react-i18next";
@@ -71,6 +72,7 @@ export default function HomePage() {
     const [activeDeleteModal, setActiveDeleteModal] = useState(false);
     const [deleteBtnLoading, setDeleteBtnLoading] = useState(false);
     const [toggleLoadData, setToggleLoadData] = useState(true);
+    const [modalImage, setModalImage] = useState(null); // Store image URL
 
     const [appStatus, setAppStatus] = useState(false);
     const [passwordProtected, setPasswordProtected] = useState(false);
@@ -265,6 +267,10 @@ export default function HomePage() {
     }, []);
 
 
+    const handleInfoModal = (image) => {
+        setModalImage(image); // Set the image URL
+        setActiveDeleteModal(true); // Open modal
+    };
 
     // ------------------------Toasts Code start here------------------
     const toggleErrorMsgActive = useCallback(() => setErrorToast((errorToast) => !errorToast), []);
@@ -342,9 +348,6 @@ export default function HomePage() {
                 position={index}
                 onClick={() => handleRowClick(id)} // Add this line
             >
-
-
-
                 <IndexTable.Cell>
                     <div className="capitalize">
                        {unique_id}
@@ -378,15 +381,22 @@ export default function HomePage() {
                 <IndexTable.Cell>{horizontal_density}</IndexTable.Cell>
                 <IndexTable.Cell>{created_at != null ? formatDate(created_at) : "---"}</IndexTable.Cell>
                 <IndexTable.Cell style={{ textAlign: 'right' }}>
-                    {image &&
-                        <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                        {/* Button to open modal and pass the image */}
+                        {image &&
                             <Button
                                 size="large"
-                                icon={ExternalSmallIcon}
-                                onClick={() => window.open(image, '_blank')}
+                                icon={ViewIcon}
+                                onClick={() => handleInfoModal(image)} // Wrap in arrow function
                             />
-                        </div>
-                    }
+                        }
+                        {/* Button to open the builder link in a new tab */}
+                        <Button
+                            size="large"
+                            icon={ExternalSmallIcon}
+                            onClick={() => window.open(`https://a8fcb0-2.myshopify.com/pages/builder?preview=${unique_id}`, '_blank')}
+                        />
+                    </div>
                 </IndexTable.Cell>
 
 
@@ -398,24 +408,28 @@ export default function HomePage() {
         <>
 
             <Modal
+                size="large"
                 open={activeDeleteModal}
                 onClose={toggleDeleteModalClose}
-                title="Delete Rule"
-                primaryAction={{
-                    destructive: true,
-                    content: "Delete",
-                    loading: deleteBtnLoading,
-                    onAction: handleDelete,
-                }}
-                secondaryActions={[
-                    {
-                        content: "Cancel",
-                        onAction: toggleDeleteModalClose,
-                    },
-                ]}
+                title="Image"
             >
                 <Modal.Section>
-                    <p>This can't be undone.</p>
+                    <div
+                        style={{
+                            position: 'relative',
+                            boxSizing: 'content-box',
+                            maxWidth: '100%',
+                            aspectRatio: '1.8508997429305913',
+                        }}
+                    >
+                        {modalImage && (
+                            <img
+                                src={modalImage}
+                                alt="Preview"
+                                style={{ width: '100%', height: 'auto' }}
+                            />
+                        )}
+                    </div>
                 </Modal.Section>
             </Modal>
             {loading ? (
@@ -423,7 +437,7 @@ export default function HomePage() {
             ) : (
 
                 <>
-                    <Page
+                    <Page fullWidth
 
 
                         title="Dun Wall Builder"
@@ -489,7 +503,7 @@ export default function HomePage() {
                                             {title:'Vertical Density'},
                                             {title:'Horizontal Density'},
                                             { title: "Date" },
-                                            { title: "Image" },
+                                            { title: "Action" },
                                         ]}
                                     >
                                         {rowMarkup}

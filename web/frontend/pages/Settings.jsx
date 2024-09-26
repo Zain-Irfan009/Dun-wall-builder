@@ -404,7 +404,7 @@ export default function Settings() {
                     <SkeltonPageForProductDetail />
                 </span>
                     :
-                    <Page
+                    <Page fullWidth
                         breadcrumbs={[{ content: 'Discounts', onAction: handleDiscardModal }]}
                         title="Mail SMTP Setting"
                     >
