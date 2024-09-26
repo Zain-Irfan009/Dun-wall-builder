@@ -183,7 +183,7 @@ class DunBuilderController extends Controller
         $this->SendMail($dun_builder_detail);
     }
     public function SendMail($dun_builder_detail){
-        $user =Session::where('id',2)->first();
+        $user =Session::first();
 
 
         $mail_smtp=MailSmtpSetting::where('shop_id',$user->id)->first();
