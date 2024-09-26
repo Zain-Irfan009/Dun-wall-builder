@@ -343,25 +343,7 @@ export default function HomePage() {
                 onClick={() => handleRowClick(id)} // Add this line
             >
 
-                <IndexTable.Cell>
-                    {image && (
-                        <div>
-                            <button
-                                onClick={() => window.open(image, '_blank')}
-                                style={{
-                                    background: 'none',
-                                    border: 'none',
-                                    color: '#007ace',
-                                    cursor: 'pointer',
-                                    textDecoration: 'underline',
-                                    padding: 0
-                                }}
-                            >
-                                View Image
-                            </button>
-                        </div>
-                    )}
-                </IndexTable.Cell>
+
 
                 <IndexTable.Cell>
                     <div className="capitalize">
@@ -395,7 +377,17 @@ export default function HomePage() {
                 <IndexTable.Cell>{vertical_density}</IndexTable.Cell>
                 <IndexTable.Cell>{horizontal_density}</IndexTable.Cell>
                 <IndexTable.Cell>{created_at != null ? formatDate(created_at) : "---"}</IndexTable.Cell>
-
+                <IndexTable.Cell style={{ textAlign: 'right' }}>
+                    {image &&
+                        <div style={{display: 'flex', justifyContent: 'flex-end', gap: '8px'}}>
+                            <Button
+                                size="large"
+                                icon={ExternalSmallIcon}
+                                onClick={() => window.open(image, '_blank')}
+                            />
+                        </div>
+                    }
+                </IndexTable.Cell>
 
 
             </IndexTable.Row>
@@ -485,7 +477,6 @@ export default function HomePage() {
                                         }}
                                         headings={[
 
-                                            { title: "" },
                                             { title: "Preview Id" },
                                             { title: "Email" },
                                             { title: "Wall Width" },
@@ -498,6 +489,7 @@ export default function HomePage() {
                                             {title:'Vertical Density'},
                                             {title:'Horizontal Density'},
                                             { title: "Date" },
+                                            { title: "Image" },
                                         ]}
                                     >
                                         {rowMarkup}
