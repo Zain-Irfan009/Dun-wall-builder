@@ -1,137 +1,151 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>{{ $details['subject'] }}</title>
-    <style media="all" type="text/css">
-        body {
-            font-family: Helvetica, sans-serif;
-            font-size: 16px;
-            line-height: 1.3;
-            background-color: #f4f5f6;
-            margin: 0;
-            padding: 0;
+    <style>
+        /* Reset and base styles */
+        body, table, td, a { font-family: Arial, sans-serif; color: #333; text-decoration: none; }
+        img { display: block; max-width: 100%; height: auto; }
+        table { border-collapse: collapse; width: 100%; }
+        .header_template_logo, .content_template_details .content_template_details-inner {
+            background: #FCFAF8;
+            border-radius: 10px;
+        }
+        /* Layout and appearance */
+        .content_template_details{border-top:2px solid #FFFFFF}
+        .email-container { max-width: 600px; margin: auto;  }
+        .header-logo { text-align: center;    text-align: -webkit-center; padding: 20px 0; }
+        .content { padding: 20px;border-top:2px solid #FFFFFF}
+        .center-text { text-align: center; }
+        .button { background-color: #78866B; color: #FFFFFF; padding: 12px 24px; border-radius: 20px; display: inline-flex; margin: 20px 0; font-size: 16px; font-weight: bold; }
+        .button img {
+            margin-left: 38px; /* Space between text and icon */
+            vertical-align: middle;
+        }
+        .section { padding: 20px 0; }
+        .section h2 { color: #333333; font-size: 24px; font-weight: bold; }
+        .section p { color: #555555; font-size: 16px; line-height: 1.6; }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            .email-container { padding: 10px; }
+            .button { width: 100%; text-align: center; }
         }
 
-        table {
-            border-collapse: separate;
-            width: 100%;
+        .check_mark{
+            text-align: -webkit-center;
+        }
+        .next_div{
+            text-align: -webkit-center;
         }
 
-        table td {
-            font-family: Helvetica, sans-serif;
-            font-size: 16px;
-            vertical-align: top;
+        .headings{
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 36.8px;
+            font-family: Helvetica;
         }
+        .paragraphs{
+            font-size: 20px;
+            color: #000000;
+            line-height: 30px;
+            font-weight:400;
+            font-family: Helvetica;
 
-        .container {
-            max-width: 600px;
+        }
+        .container-small{
+            max-width: 360px;
             margin: 0 auto;
-            padding-top: 24px;
+
         }
 
-        .main {
-            background: #ffffff;
-            border: 1px solid #eaebed;
-            border-radius: 16px;
-            width: 100%;
+        .btn_link{
+            text-decoration:underline;background-color: transparent;font-weight: 700;font-size: 16px;line-height: 20.48px; ;
         }
 
-        .wrapper {
-            padding: 24px;
-        }
-
-        .footer {
-            padding-top: 24px;
-            text-align: center;
-            color: #9a9ea6;
-            font-size: 16px;
-        }
-
-        a {
-            color: #0867ec;
-            text-decoration: underline;
-        }
-
-        .btn {
-            min-width: 100%;
-        }
-
-        .btn-primary a {
-            background-color: #0867ec;
-            color: #ffffff;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-
-        @media only screen and (max-width: 640px) {
-            .container {
-                width: 100% !important;
-                padding-top: 8px !important;
-            }
-
-            .wrapper {
-                padding: 8px !important;
-            }
-
-            .btn-primary a {
-                width: 100% !important;
-                display: block;
-            }
-        }
     </style>
 </head>
-<body>
-<table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
-    <tr>
-        <td>&nbsp;</td>
-        <td class="container">
+<body style="margin: 0; padding: 0; background-color: #FFFFFF;">
+
+<div role="presentation" class="email-container">
+    <!-- Logo Section -->
+    <div class="header_template_logo">
+        <div class="header-logo">
+            <img src="https://a8fcb0-2.myshopify.com/cdn/shop/files/dun-logo-navigation.png?v=1726672797&width=140" alt="Your Company Logo" style="max-width: 150px;">
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="content_template_details ">
+        <div class="content_template_details-inner ">
             <div class="content">
-
-                <!-- START CENTERED WHITE CONTAINER -->
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main">
-                    <!-- LOGO SECTION -->
-                    <tr>
-                        <td class="wrapper" align="center">
-                            <img src="https://a8fcb0-2.myshopify.com/cdn/shop/files/dun-logo-navigation.png?v=1726672797&width=140" alt="Your Company Logo" style="max-width: 150px;">
-                        </td>
-                    </tr>
-
-                    <!-- START MAIN CONTENT AREA -->
-                    <tr>
-                        <td class="wrapper">
-                            <p>Hi there</p>
-                            <p>By Clicking the button you can see the details of your recent configuration</p>
-                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
-                                <tbody>
-                                <tr>
-                                    <td align="left">
-                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                                            <tbody>
-                                            <tr>
-                                                <td> <a href="https://a8fcb0-2.myshopify.com/pages/builder?preview={{ $details['unique_id'] }}" target="_blank">Preview</a> </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <p>Good luck! Hope it works.</p>
-                        </td>
-                    </tr>
-
-                    <!-- END MAIN CONTENT AREA -->
-                </table>
+                <div class="container-small">
+                    <!-- Header Text -->
+                    <div class="center-text">
+                        <div class="check_mark">
+                            <img src="{{asset('icon_circle.png')}}" alt="Checkmark" width="40" style="margin-bottom: 20px;">
+                        </div>
+                        <h1 style="font-size: 48px; color: #333333; font-weight: 700;line-height:55.2px">Hi, your design has been saved</h1>
+                        <p class="paragraphs">
+                            Click the link below to view, modify, or reference the approximate installation measurements for your custom Dūn wallscape.
+                        </p>
+                        <a href="https://a8fcb0-2.myshopify.com/pages/builder?preview={{ $details['unique_id'] }}" target="_blank" style="color: white" class="button">View Now <img src="{{asset('Vector2.png')}}"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Divider -->
 
 
+            <!-- "What's Next?" Section -->
+            <div class="content">
+                <div class="container-small">
+                    <h2 class="center-text" style="font-size: 16px;font-weight: 700;line-height:
+18.4px; color: #B96F48;">WHAT'S NEXT?</h2>
+                    <!-- Continue Shopping -->
+                    <div class="center-text">
+                        <div class="next_div">
+                            <img src="{{asset('icon_cart.png')}}" alt="Cart Icon" width="40" style="margin: 10px 0;">
+                        </div>
+                        <h2 class="headings"> Continue Shopping</h2>
+                        <p class="paragraphs">Dūn empowers you to add texture, color, and light play to any room. Shop our dynamic layouts or create a new custom wallscape in Dūn Studio.</p>
+                        <a href="https://a8fcb0-2.myshopify.com/" target="_blank" style="color: #66805E" class="button btn_link" >SHOP NOW</a>
+                    </div>
+
+                </div>
 
             </div>
-        </td>
-        <td>&nbsp;</td>
-    </tr>
-</table>
+
+            <!-- Learn More -->
+            <div class="content">
+                <div class="container-small">
+                    <div class="center-text" style="margin-top: 40px;">
+                        <div class="next_div">
+                            <img src="{{asset('icon_question_mark.png')}}" alt="Cart Icon" width="40" style="margin: 10px 0;">
+                        </div>
+                        <h2 class="headings">Learn More</h2>
+                        <p class="paragraphs">Slide into our Frequently Asked Questions page for more information. If you have any unanswered questions, please reach out to us directly.</p>
+                        <a href="https://a8fcb0-2.myshopify.com/" target="_blank" style="color: #66805E" class="button btn_link">GO NOW</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Follow Us -->
+            <div class="content">
+                <div class="container-small">
+                    <div class="center-text" style="margin-top: 40px;">
+                        <div class="next_div">
+                            <img src="{{asset('icon_image.png')}}" alt="Cart Icon" width="40" style="margin: 10px 0;">
+                        </div>
+                        <h2 class="headings">Follow Us</h2>
+                        <p class="paragraphs">Looking for inspiration or want to see how others use Dūn in their space?</p>
+                        <a href="https://a8fcb0-2.myshopify.com/" target="_blank" style="color: #66805E" class="button btn_link" >LET'S CONNECT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

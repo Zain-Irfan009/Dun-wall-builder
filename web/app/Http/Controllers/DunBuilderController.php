@@ -186,6 +186,7 @@ class DunBuilderController extends Controller
         $user =Session::first();
 
 
+
         $mail_smtp=MailSmtpSetting::where('shop_id',$user->id)->first();
         if($mail_smtp) {
 
