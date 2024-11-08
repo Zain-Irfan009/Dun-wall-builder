@@ -110,7 +110,7 @@
                         </div>
                         <h2 class="headings"> Continue Shopping</h2>
                         <p class="paragraphs">Dūn empowers you to add texture, color, and light play to any room. Shop our dynamic layouts or create a new custom wallscape in Dūn Studio.</p>
-                        <a href="https://a8fcb0-2.myshopify.com/" target="_blank" style="color: #66805E" class="button btn_link" >SHOP NOW</a>
+                        <a href="www.hausdun.com/collections/all" target="_blank" style="color: #66805E" class="button btn_link" >SHOP NOW</a>
                     </div>
 
                 </div>
@@ -126,7 +126,7 @@
                         </div>
                         <h2 class="headings">Learn More</h2>
                         <p class="paragraphs">Slide into our Frequently Asked Questions page for more information. If you have any unanswered questions, please reach out to us directly.</p>
-                        <a href="https://a8fcb0-2.myshopify.com/" target="_blank" style="color: #66805E" class="button btn_link">GO NOW</a>
+                        <a href=" www.hausdun.com/pages/frequently-asked-questions" target="_blank" style="color: #66805E" class="button btn_link">GO NOW</a>
                     </div>
                 </div>
             </div>
@@ -139,7 +139,7 @@
                         </div>
                         <h2 class="headings">Follow Us</h2>
                         <p class="paragraphs">Looking for inspiration or want to see how others use Dūn in their space?</p>
-                        <a href="https://a8fcb0-2.myshopify.com/" target="_blank" style="color: #66805E" class="button btn_link" >LET'S CONNECT</a>
+                        <a href="https://www.instagram.com/hausdun/" target="_blank" style="color: #66805E" class="button btn_link" >LET'S CONNECT</a>
                     </div>
                 </div>
             </div>
