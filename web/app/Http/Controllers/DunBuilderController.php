@@ -219,6 +219,7 @@ class DunBuilderController extends Controller
                     $dun_builder_detail->email_error=null;
                     $dun_builder_detail->save();
                 }catch (\Exception $exception){
+                    dd($exception->getMessage());
                     $dun_builder_detail->is_email_failed=1;
                     $dun_builder_detail->email_error=json_encode($exception->getMessage());
                     $dun_builder_detail->save();

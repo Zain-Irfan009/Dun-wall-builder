@@ -39,6 +39,7 @@
         }
         .next_div{
             text-align: -webkit-center;
+
         }
 
         .headings{
@@ -48,9 +49,9 @@
             font-family: Helvetica;
         }
         .paragraphs{
-            font-size: 20px;
+            font-size: 16px;
             color: #000000;
-            line-height: 30px;
+            line-height: 25px;
             font-weight:400;
             font-family: Helvetica;
 
@@ -91,7 +92,10 @@
                         <p class="paragraphs">
                             Click the link below to view, modify, or reference the approximate installation measurements for your custom Dūn wallscape.
                         </p>
-                        <a href="https://a8fcb0-2.myshopify.com/pages/builder?preview={{ $details['unique_id'] }}" target="_blank" style="color: white" class="button">View Now <img src="{{asset('Vector2.png')}}"></a>
+                        <a href="https://a8fcb0-2.myshopify.com/pages/builder?preview={{ $details['unique_id'] }}" target="_blank" style="color: white" class="button">
+                            View Now <img src="{{ asset('Vector2.png') }}">
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -102,15 +106,15 @@
             <div class="content">
                 <div class="container-small">
                     <h2 class="center-text" style="font-size: 16px;font-weight: 700;line-height:
-18.4px; color: #B96F48;">WHAT'S NEXT?</h2>
+18.4px; color: #B96F48;letter-spacing:4px;">WHAT'S NEXT?</h2>
                     <!-- Continue Shopping -->
                     <div class="center-text">
-                        <div class="next_div">
-                            <img src="{{asset('icon_cart.png')}}" alt="Cart Icon" width="40" style="margin: 10px 0;">
+                        <div class="next_div" style="  margin-top:70px;">
+                            <img src="{{asset('icon_cart.png')}}" alt="Cart Icon" width="50" style="margin: 10px 0;">
                         </div>
                         <h2 class="headings"> Continue Shopping</h2>
                         <p class="paragraphs">Dūn empowers you to add texture, color, and light play to any room. Shop our dynamic layouts or create a new custom wallscape in Dūn Studio.</p>
-                        <a href="www.hausdun.com/collections/all" target="_blank" style="color: #66805E" class="button btn_link" >SHOP NOW</a>
+                        <a href="https://www.hausdun.com/collections/all" target="_blank" style="color: #66805E;margin-top:0px !important;" class="button btn_link" >SHOP NOW</a>
                     </div>
 
                 </div>
@@ -122,11 +126,11 @@
                 <div class="container-small">
                     <div class="center-text" style="margin-top: 40px;">
                         <div class="next_div">
-                            <img src="{{asset('icon_question_mark.png')}}" alt="Cart Icon" width="40" style="margin: 10px 0;">
+                            <img src="{{asset('icon_question_mark.png')}}" alt="Cart Icon" width="30" style="margin: 10px 0;">
                         </div>
                         <h2 class="headings">Learn More</h2>
                         <p class="paragraphs">Slide into our Frequently Asked Questions page for more information. If you have any unanswered questions, please reach out to us directly.</p>
-                        <a href=" www.hausdun.com/pages/frequently-asked-questions" target="_blank" style="color: #66805E" class="button btn_link">GO NOW</a>
+                        <a href="https://www.hausdun.com/pages/frequently-asked-questions" target="_blank" style="color: #66805E;margin-top:0px !important;" class="button btn_link">GO NOW</a>
                     </div>
                 </div>
             </div>
@@ -139,7 +143,7 @@
                         </div>
                         <h2 class="headings">Follow Us</h2>
                         <p class="paragraphs">Looking for inspiration or want to see how others use Dūn in their space?</p>
-                        <a href="https://www.instagram.com/hausdun/" target="_blank" style="color: #66805E" class="button btn_link" >LET'S CONNECT</a>
+                        <a href="https://www.instagram.com/hausdun/" target="_blank" style="color: #66805E;margin-top:0px !important;" class="button btn_link" >LET'S CONNECT</a>
                     </div>
                 </div>
             </div>
