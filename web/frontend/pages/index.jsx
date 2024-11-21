@@ -378,10 +378,10 @@ export default function HomePage() {
                 </IndexTable.Cell>
 
                 <IndexTable.Cell>
-                    {subscription === 'true' ? (
-                        <Badge tone="success">True</Badge>
+                    {subscription === 'True' ? (
+                        <Badge tone="success">Subscribed</Badge>
                     ) : (
-                        <Badge tone="info">False</Badge>
+                        <Badge tone="info">Not Subscribed</Badge>
                     )}
                 </IndexTable.Cell>
 
