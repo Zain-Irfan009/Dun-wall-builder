@@ -508,7 +508,7 @@ export default function HomePage() {
                                             {title:'Dun Height'},
                                             {title:'Form Type'},
                                             {title:'Show Measurement'},
-                                            {title:'Newsletter Subscription'},
+                                            {title:'Accept Marketing'},
                                             {title:'Shape'},
                                             {title:'Vertical Density'},
                                             {title:'Horizontal Density'},
