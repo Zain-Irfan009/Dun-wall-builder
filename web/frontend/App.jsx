@@ -17,7 +17,7 @@ export default function App() {
   const pages = import.meta.globEager("./pages/**/!(*.test.[jt]sx)*.([jt]sx)");
   const { t } = useTranslation();
 
-    const apiUrl = "https://phpstack-362288-4901431.cloudwaysapps.com/api/";
+    const apiUrl = "https://phpstack-1361520-5011601.cloudwaysapps.com/api/";
     // const apiUrl = "https://dun-wall-builder.test/api/";
   return (
     <PolarisProvider>
