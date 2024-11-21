@@ -51,6 +51,7 @@ class DunBuilderController extends Controller
                 }
 
                 $dun_builder_detail->email = $request->email;
+                $dun_builder_detail->subscription = $request->subscription;
                 $dun_builder_detail->unique_id = Str::random(10);
                 $dun_builder_detail->save();
 

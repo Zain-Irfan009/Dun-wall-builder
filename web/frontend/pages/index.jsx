@@ -331,6 +331,7 @@ export default function HomePage() {
                 dun_unit,
                 form_type,
                 show_measurement,
+                subscription,
                 shape,
                 vertical_density,
                 horizontal_density,
@@ -370,6 +371,14 @@ export default function HomePage() {
 
                 <IndexTable.Cell>
                     {show_measurement === 'true' ? (
+                        <Badge tone="success">True</Badge>
+                    ) : (
+                        <Badge tone="info">False</Badge>
+                    )}
+                </IndexTable.Cell>
+
+                <IndexTable.Cell>
+                    {subscription === 'true' ? (
                         <Badge tone="success">True</Badge>
                     ) : (
                         <Badge tone="info">False</Badge>
@@ -499,6 +508,7 @@ export default function HomePage() {
                                             {title:'Dun Height'},
                                             {title:'Form Type'},
                                             {title:'Show Measurement'},
+                                            {title:'Newsletter Subscription'},
                                             {title:'Shape'},
                                             {title:'Vertical Density'},
                                             {title:'Horizontal Density'},
